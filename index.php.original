@@ -1,0 +1,67 @@
+<?php
+include_once 'header.php';
+session_start();
+if(!isset($_SESSION['flag'])){
+    $_SESSION['access']=true;
+}
+
+$meurl = $_SERVER['PHP_SELF'];
+$left = (isset($_REQUEST['left'])) ? htmlspecialchars($_REQUEST['left']) : 'home';
+$right = (isset($_REQUEST['right'])) ? htmlspecialchars($_REQUEST['right']) : '';
+$folder = (isset($_REQUEST['folder'])) ? htmlspecialchars($_REQUEST['folder']) : './';
+?>
+<body class="container">
+    <ul class="nav nav-pills">
+    <li role="presentation"><a href="?left=home"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;首页</a></li>
+    <li role="presentation"><a href="?left=select"><span class="glyphicon glyphicon-file"></span>&nbsp;&nbsp;选择文件</a></li>
+    <li role="presentation"><a href="?left=input&right=output"><span class="glyphicon glyphicon-arrow-right"></span>&nbsp;&nbsp;短句翻译</a></li>
+    </ul>
+    <ul class="nav nav-pills pull-right">
+        <li><a href="glyphicon glyphicon-login">登录</a>
+        </li>
+        
+    </ul>
+	<h1 class="mailmanagetitle">&nbsp</h1>
+	<div class="col-sm-6">
+		<div class="jumbotron">
+			<?php
+switch ($left) {
+    case 'home':
+        require_once 'home.php';
+        break;
+    case 'select':
+        require_once 'select.php';
+        break;
+    case 'preview':
+        require_once 'preview.php';
+        break;
+    case 'translate':
+        require_once 'translate.php';
+        break;
+    case 'input':
+        require_once 'input.php';
+        break;
+}
+?>
+		</div>
+	</div>
+	<div class="col-sm-6">
+		<div class="jumbotron">
+			<?php
+switch ($right) {
+    case 'translate':
+        require_once 'translate.php';
+        break;
+    case 'output':
+        require_once 'output.php';
+        break;
+}
+?>
+			</div>
+	</div>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+<p class="text-right"><?php require_once 'function.php'; $number=online(); echo "当前在线人数：".$number[0]."&nbsp;&nbsp"."历史访问人数：".$number[1];  ?></p>
+</nav>
+<?php
+include_once 'footer.php';
+?>
