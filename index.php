@@ -37,6 +37,7 @@ echo "<li><a href='?left=logout'><span class='glyphicon glyphicon-log-out'></spa
 </ul>
 </div>
 <ul class="nav navbar-nav navbar-right">
+<li><a href="star.html"><span class="glyphicon glyphicon-star"></span>&nbsp;&nbsp;星空</a></li>
 <?php if(isset($_SESSION['username']) && isset($_SESSION['gender'])){
     if($_SESSION['gender']==0){
 echo "<li><img style='width: 50px;height: 50px;' class='img-circle' src='image/boy.jpg' alt='头像'/></li> ";

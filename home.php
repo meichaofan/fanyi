@@ -12,7 +12,7 @@
 		<div class="panel panel-success">
 			<div class="panel-heading">
 				<h3 class="panel-title">
-					<small>留言框 &nbsp;&nbsp;<span class="emotion">表情</span></small>
+					<small>留言框 &nbsp;&nbsp;<span class="emotion pull-right">表情</span></small>
 				</h3>
 			</div>
 			<div class="panel-body" id="chat_panel">

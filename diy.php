@@ -1,7 +1,6 @@
 <?php
 ?>
 <html>
-<div class="row">
   <div class="col-xs-6">
     <a id="example1" href="image/a.jpg" class="thumbnail">
       <img src="image/a_mini.jpg" alt="..." />
