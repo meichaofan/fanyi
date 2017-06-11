@@ -20,18 +20,18 @@ $folder = (isset($_REQUEST['folder'])) ? htmlspecialchars($_REQUEST['folder']) :
 class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;首页</a></li>
 <?php 
 //用户登录成功，就可以进入用户家目录
-if(isset($_SESSION['username']))
+if(isset($_SESSION['login']))
 echo '<li><a href="?left=userhome"><span class="glyphicon glyphicon-heart-empty"></span>&nbsp;&nbsp;家目录</a></li>';
 ?>
 <?php
-if(isset($_SESSION['username']))
+if(isset($_SESSION['login']))
 echo "<li><a href='?left=select'><span class='glyphicon glyphicon-file'></span>&nbsp;&nbsp;上传文件</a></li>";
 ?>
 <li><a href="?left=input&right=output"><span
 class="glyphicon glyphicon-arrow-right"></span>&nbsp;&nbsp;短句翻译</a></li>
 <?php 
 //判断用户有无登录，不管是否激活成功
-if(isset($_SESSION['username']))
+if(isset($_SESSION['login']))
 echo "<li><a href='?left=logout'><span class='glyphicon glyphicon-log-out'></span>&nbsp;&nbsp;退出</a></li>";
 ?>
 </ul>

@@ -23,6 +23,7 @@ $db->insert('user', array('username'=>$username,'password'=>$password,'gender'=>
 if($db->id()){
     //此时用户名、密码、邮箱等信息已经插入到数据库中
     $_SESSION['username']=$username;
+    $_SESSION['login']=true;
     $_SESSION['status']=0; //0-表示注册成功，账号未激活，1-表示注册成功，账号激活成功
     $_SESSION['regist']=0; //0-表示注册不成功，账号未激活 //1.表示注册成功，账号未激活
     $_SESSION['gender']=$gender;

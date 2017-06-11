@@ -11,5 +11,6 @@
 <script src="js/main.js"></script>
 <script src="js/jquery.imgbox.pack.js"></script>
 <script src="js/image.js"></script>
+<script src="js/pic.js"></script>
 </body>
 </html>

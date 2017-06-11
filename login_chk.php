@@ -14,12 +14,14 @@ if(isset($num[0])){
         $_SESSION['status']=1;
         $_SESSION['gender']=$num[0]['gender'];
         $_SESSION['username']=$username;
+        $_SESSION['login']=true;
         $_SESSION['user_folder']=dirname(__FILE__).DIRECTORY_SEPARATOR.'user'.DIRECTORY_SEPARATOR.$username;
         header("location:http://47.94.19.205:8081/");
     }else{
         //用户注册成功，但是未激活
         $_SESSION['status']=0;
         $_SESSION['gender']=$num[0]['gender'];
+        $_SESSION['login']=true;
         $_SESSION['username']=$username;
         $_SESSION['user_folder']=dirname(__FILE__).DIRECTORY_SEPARATOR.'user'.DIRECTORY_SEPARATOR.$username;
         header("location:http://47.94.19.205:8081/index.php?register_success");

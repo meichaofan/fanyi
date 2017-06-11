@@ -161,12 +161,13 @@ function postmail($username, $token, $to)
     $mail->IsSMTP();
     $mail->SMTPDebug = 0;
     $mail->SMTPAuth = true; // 启用 SMTP 验证功能
-    $mail->SMTPSecure = "ssl"; // 安全协议，可以注释掉
-    $mail->Host = 'smtp.qq.com'; // SMTP 服务器
-    $mail->Port = 465; // SMTP服务器的端口号
-    $mail->Username = '1783590642@qq.com';
-    $mail->Password = 'adpnbhsdpiokbigi';
-    $mail->SetFrom('1783590642@qq.com', '一如当年');
+    //$mail->SMTPSecure = "ssl"; // 安全协议，可以注释掉
+    $mail->Host = 'mailcluster.sugon.com'; // SMTP 服务器
+    $mail->Port = 25; // SMTP服务器的端口号
+    $mail->Username = 'meichf_rg@svmsoft.com.cn';
+    //$mail->Password = 'adpnbhsdpiokbigi';
+    $mail->Password = 'sugonmeichf_rg';
+    $mail->SetFrom('meichf_rg@svmsoft.com.cn', 'meichf');
     $mail->Subject = "用户帐号激活"; // 邮件标题
     $body = "亲爱的" . $username . "：<br/>感谢您在我站注册了新帐号。<br/>请点击链接激活您的帐号。<br/> 
     <a href='http://47.94.19.205:8081/active.php?verify=" . $token . "' target= 
