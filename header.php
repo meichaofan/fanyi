@@ -11,5 +11,6 @@
 <link rel="stylesheet" href="css/manage.css">
 <link rel="stylesheet" href="css/fileinput.min.css">
 <link rel="stylesheet" href="css/image.css">
+<script src="js/jquery-2.1.1.min.js"></script>
+
 </head>
-<!-- header �ļ� -->

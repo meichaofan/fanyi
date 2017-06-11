@@ -8,7 +8,7 @@ $db = new Medoo([
     'database_name'=>'fanyi',
     'server'=>'localhost',
     'username'=>'root',
-    'password'=>'huanhuan0921',
+    'password'=>'1534',
     'charset'=>'utf8',
     //端口：可选
     'port'=>'3306',

@@ -18,3 +18,4 @@
 <p class="text-right" ><var class="word">100</var>/100</p>
 </div>
 <form>
+<script src="js/input.js"></script>
