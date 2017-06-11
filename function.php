@@ -74,12 +74,12 @@ function Size($size)
  * 6.function translate()
  * 翻译
  */
-function translate($content)
+function translate($content,$from,$to)
 {
     $url = "http://fanyi.baidu.com/v2transapi";
     $data = array(
-        'from' => 'en',
-        'to' => 'zh',
+        'from' => $from,
+        'to' => $to,
         'query' => trim($content)
     );
     $data = http_build_query($data);
