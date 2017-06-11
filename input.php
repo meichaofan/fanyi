@@ -1,6 +1,6 @@
 <?php
 ?>
-<form>
+<form action="index.php?left=input&right=output" method="post" >
 <div class="btn-toolbar">
 <div class="btn-group" role="group" >
  <button id="src" type="button" class="btn btn-default">英文</button>
@@ -18,31 +18,19 @@
     echo $_REQUEST['content'];?></textarea>
 <p class="text-right" ><var class="word">100</var>/100</p>
 </div>
+<input id="flag1" type="hidden" name="flag" value="0" />
 <form>
 <script src="js/input.js"></script>
 <script>
 	$("#qie").click(function(){
-			$("#src").html()=='中文'?$("#src").html('英文'):$("#src").html('中文');
-			$("#des").html()=='英文'?$("#des").html('中文'):$("#des").html('英文');
+			if($("#src").html()=='中文'){
+				$("#src").html('英文');
+				$("#des").html('中文');
+				$("#flag1").val('0');
+			}else{
+				$("#src").html('中文');
+				$("#des").html('英文');
+				$("#flag1").val('1');
+			}
 		});
-	// method="post" action="index.php?left=input&right=output"
-	
-	$("form").submit(function(){
-		var url = "index.php?left=input&right=output";
-		var content = $("textarea[name=content]").val();
-		var data = {};
-		//判断是英译汉还是汉译英
-		if($("#src").html()=='英文'){
-    		data.flag=0; //0 英译汉  1 汉译英
-		}else{
-			data.flag=1; //0 英译汉  1 汉译英
-		}
-		data.content=content;
-		$.post(url,data);
-		return false;
-		})
-	
-	
-	
-		
 </script>
